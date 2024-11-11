@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Questions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .question { margin-bottom: 20px; }
+        .answer { margin-top: 10px; color: green; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>Basic protein stastitics metrics</h1>
+
+    <form action="/calculate" method="POST">
+        <div class="question">
+            <p>A1: What is the number of unique protein/copy-number values are in the file?</p>
+            <button type="submit" name="question" value="A1">Calculate</button>
+            {% if question == 'A1' %}
+                <div class="answer">
+                    Answer: {{ answer }}
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="question">
+            <p>A2: Provide summary statistics of protein abundance data (mean, stdev).</p>
+            <button type="submit" name="question" value="A2">Calculate</button>
+            {% if question == 'A2' %}
+                <div class="answer">
+                    Answer: <br>
+                        {{ answer | safe }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="question">
+            <p>A3: Calculate the rank of all proteins based on the abundance values.</p>
+            <button type="submit" name="question" value="A3">Calculate</button>
+            {% if question == 'A3' %}
+                <div class="answer">
+                    Answer: <br>
+                        {{ answer | safe }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="question">
+            <p>B1: What is the domain with the highest average abundance? </p>
+            <button type="submit" name="question" value="B1">Calculate</button>
+            {% if question == 'B1' %}
+                <div class="answer">
+                    Answer: {{ answer }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="question">
+            <p>B2: Provide summary statistics of protein domain abundance data (mean, stdev, ranks).</p>
+            <button type="submit" name="question" value="B2">Calculate</button>
+            {% if question == 'B2' %}
+                <div class="answer">
+                    Answer: <br>
+                        {{ answer | safe }}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+</body>
+</html>

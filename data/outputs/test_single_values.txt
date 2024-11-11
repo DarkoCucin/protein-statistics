@@ -1,0 +1,2 @@
+Number of unique protein/copy-number values is: 16240
+The highest abundant protein domain is: zf-C2H2
